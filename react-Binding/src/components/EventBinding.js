@@ -10,9 +10,16 @@ class EventBinding extends React.Component {
         };
     }
     
-    handleClick() {
+    // handleClick() {
+    //     this.setState({
+    //         introduction : this.state.introduction === "Hello!" ? "Goodbye!" : "Hello!" ,
+    //     });
+    //     console.log(this.state.introduction);
+    // }
+
+    handleClick = () => {
         this.setState({
-            introduction: "Goodbye!",
+            introduction : this.state.introduction === "Hello!" ? "Goodbye!" : "Hello!" ,
         });
         console.log(this.state.introduction);
     }
@@ -23,7 +30,9 @@ class EventBinding extends React.Component {
                 <h1>
                     {this.state.introduction} {this.props.greeting}
                 </h1>
-                <button onClick={() => this.handleClick()}>
+                {/* <button onClick={() => this.handleClick()}> */}
+                {/* <button onClick={this.handleClick.bind(this)}> */}
+                <button onClick={this.handleClick}>
                     {this.state.buttonText}
                 </button>
             </div>
